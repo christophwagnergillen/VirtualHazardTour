@@ -1,0 +1,7 @@
+  /* CWG: Move z-value of menues into clickable range for mobile devices with VR enabled */
+  .navbar {
+    position: static;
+  }
+  .navbar .nav > li {
+    z-index: 1001;
+  }

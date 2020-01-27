@@ -1,0 +1,74 @@
+{% extends 'layout_tour.html' %}
+{% block body %}
+<a-scene>
+<a-assets>
+  <script>
+    AFRAME.registerComponent('next', {
+      schema: {},
+      init: function () {
+        this.el.addEventListener('click', function () {
+          window.location.href = "{{url_for('tour', topic=topic, current_pic=current_pic, command='next')}}";
+        });
+      }
+    });
+  </script>
+  <script>
+    AFRAME.registerComponent('back', {
+      schema: {},
+      init: function () {
+        this.el.addEventListener('click', function () {
+          window.location.href = "{{url_for('tour', topic=topic, current_pic=current_pic, command='back')}}";
+        });
+      }
+    });
+  </script>
+  <script>
+    AFRAME.registerComponent('stop', {
+      schema: {},
+      init: function () {
+        this.el.addEventListener('click', function () {
+          window.location.href = "{{url_for('home', file_list=file_list, tour_file_directory=tour_file_directory)}}";
+        });
+      }
+    });
+  </script>
+<!-- Image link template -->
+  <script id="link" type="text/html">
+    <a-entity
+      geometry="primitive: plane; height: 1; width: 1"
+      material="shader: flat; src: ${thumb}"
+      event-set__mouseenter="scale: 1.2 1.2 1"
+      event-set__mouseleave="scale: 1 1 1"
+      sound="on: click; src: #click-sound"></a-entity>
+  </script>
+  <img id="next" src="{{url_for('static', filename='next.jpg')}}">
+  <img id="back" src="{{url_for('static', filename='back.jpg')}}">
+  <img id="stop" src="{{url_for('static', filename='stop.jpg')}}">
+  <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+</a-assets>
+<!-- 360-degree image. -->
+  <a-sky id="image-360" radius="15" src="{{url_for('static', filename=tour_file_directory ~ '/' ~ topic ~ '/' ~ current_pic ~'.jpg')}}" position="2 0 1" rotation="0 -130 0" ></a-sky> 
+<!-- Image links. -->
+<a-entity id="links" layout="type: line; margin: 1.5" position="-1 -1 -5">
+<a-entity template="src: #link" data-thumb="#back" back></a-entity>
+<a-entity template="src: #link" data-thumb="#stop" stop></a-entity>
+<a-entity template="src: #link" data-thumb="#next" next></a-entity>
+</a-entity>
+
+<!-- Camera + cursor -->
+<a-camera>
+  <a-cursor
+    cursor="fuse: true; fuseTimeout: 1500"
+    position="0 0 -1"
+    geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.02"
+    material="color: red; shader: flat"
+    animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
+    animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1000; from: 1 1 1; to: 0.1 0.1 0.1"
+    animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1">
+  </a-cursor>
+  
+  </a-camera>
+</a-scene>
+{% endblock %}
+
+

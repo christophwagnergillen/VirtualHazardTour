@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% include 'includes/_navbar.html' %}
+{% block body %}
+<h3>How do I use the app?</h3>
+<p>Select a virtual hazard tour by clicking on the tour cover picture. The app detects your device automatically and adjusts the experience based on the capabilities of your device.</p>
+<ul>
+  <li><strong>Ideal</strong>: Use a tablet (or phone) and allow access to the device's motion sensors. You can move the tablet up, down, left and right and the pictures moves accordingly.</li>
+  <li><strong>Good</strong>: If you use a browser you can move left, right, up and down with your mouse. This simulates tablet movements.</li>
+  <li><strong>Experimental</strong>: If you use a VR headset, you can switch to VR mode via the button in the right corner of the screen. The VR mode works well with Google Cardboard and Oculus Quest (tested with Firefox Reality browser). However, at the moment the VR mode is experimental and might not be working on all types of headsets.</li> 
+</ul>
+<p>The red <strong>circle in the middle of your view is the cursor</strong>. To navigate <strong>move the cursor onto the command elements</strong>. Just <strong>stay on the command elements for 2s</strong> and the command is executed (no clicking required, so called "gaze based control").</p>
+<h3>What shall I do now?</h3>  
+<p>Look for the hazards that you can see in the VR environment. Note them down on a piece of paper. Depending whether the app is used in HSE schools, site specific training or games and competitions, different rules might apply. Talk to your local contact person for more details.</p>
+<p>In most cases you will work together with a team mate and change roles after a while.</p>
+<ul>
+  <li>The person with the VR headset has to spot the hazards and share the information with his/her team mate.</li>
+  <li>The team mate writes down the observations on a hazard tour form.</li>
+  <li> If the hazard tour needs to be completed in a certain amount of time, the team mate is the time keeper and responsible to inform the person immersed in VR.</li>
+  </ul>
+<h3>How can I add my own content?</h3>
+<p>To add you own content by follwoing below 5 simple steps. You need a 3D camera, e.g. an "Insta 360 One X" for about 400 Euro.</p>
+<ol>
+<li>For each hazard tour decide which 5-10 photos you want to take (e.g, warehouse aisle, loading dock, yard outside, customisation line, etc.). Note down which hazards you want to show in each of the photos. </li>
+<li>Stage the situation that shows the hazards and take the photos. In addition to the 3D photos, take one 2D photo with your phone. This photo will be used as cover page photo.</li>
+<li>Create a folder. The name of the folder should the name of the hazards tour, e.g. "Warehouse Hazard Tour". The app will automatically create a new hazard tour with the name of the folder and add it to the tour selection page.</li>
+<li> Copy your pictures inside the folder and number them from 1 to the last picture (e.g. 1.jpg, 2.jpg, 3.jpg, etc). The 2D cover page photo must be named "cover.jpg".</li>
+<li> Once the pictures and folder have been named, copy the folder with the pictures into the following location: C:\Users\[your name]\Documents\Virtual Hazard Tours\static\hazard_tours\ </li>
+</ol>
+</br>
+{% endblock %}

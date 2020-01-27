@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% include 'includes/_navbar.html' %}
+{% block body %}
+<h1 class="page-header">Virtual Hazard Tours</h1
+<p>Please click on the picture to select the hazard tour that you would like to do.</p>
+</br>
+{% for file in file_list %}
+<div class="panel panel-primary" style="width: 75%;">
+  <div class="panel-heading">
+    <strong>{{file[0]}}</strong>
+  </div>
+  <div class="panel-body">
+    <a href="{{ url_for('tour', topic=file[0], current_pic=1, command='void')}}"> <img src="{{'static/' ~ tour_file_directory ~ '/' ~ file[0] ~ '/cover.jpg'}}" style="width: 100%;" ></a>
+  </div>
+</div>
+</br>
+{% endfor %}
+<div class="panel panel-primary" style="width: 75%;">
+  <div class="panel-heading">
+    <strong>More Virtual Hazard Tours</strong>
+  </div>
+  <div class="panel-body">
+  <p><strong>Add your own tours!</strong> Take photos with a 360° camera (400 Euro) and copy them into a folder with the tour name. If you have the photos, it takes less than 1 minute to add your site specifc content. The app generates the VR tour and adds it automatically to this overview page. Generate your own tours for ...</p>
+<ul>
+<li>Production lines</li>
+<li>Utility departments</li>
+<li>Customisation lines</li>
+<li>AGV and vehicle hazards</li> 
+<li>Process safetz hazards</li> 
+<li>Enzyme hazards</li>
+<li>AGM hazards</li>
+<li>... and more. The limit is your imagination!</li>
+</ul>  
+  </div>
+</div>
+{% endblock %}
