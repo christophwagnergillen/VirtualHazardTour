@@ -70,7 +70,6 @@ for name in dir_names:
 #Start/Homepage
 @app.route('/')
 def home():
-    # return render_template('test.html')
     if not session.get('logged_in'):
         return render_template('login.html')
     else:
