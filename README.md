@@ -1,4 +1,4 @@
-# VirtualHazardTour - Instructions
+# Virtual Hazard Tours - Instructions
 
 Try the app at [https://virtualhazardtour.pythonanywhere.com](https://virtualhazardtour.pythonanywhere.com). The passwort for this demo version is "test".
 
