@@ -27,4 +27,4 @@ Add your own content by following below simple steps. You need a 3D camera, e.g.
 * Stage the situation that shows the hazards and take the photos. In addition to the 3D photos, take one 2D photo with your phone. This photo will be used as cover page.
 * Create a folder. The name of the folder should the name of the hazards tour, e.g. "Warehouse Hazard Tour". The app will automatically create a new hazard tour with the name of the folder and add it to the tour selection page.
 * Copy your pictures inside the folder and number them from 1 to the last picture (e.g. 1.jpg, 2.jpg, 3.jpg, etc). The 2D cover page photo must be named "cover.jpg".
-* Once the pictures and folder have been named, copy the folder with the pictures into the following location: C:\Users\[your name]\Documents\Virtual Hazard Tours\static\hazard_tours\
+* Once the pictures and folder have been named, copy the folder with the pictures into the following location: \static\hazard_tours\
