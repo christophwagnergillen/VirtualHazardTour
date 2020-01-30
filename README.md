@@ -1,5 +1,7 @@
 # VirtualHazardTour - Instructions
 
+Try the app at [https://www.virtualhazardtour.pythonanywhere.com](https://www.virtualhazardtour.pythonanywhere.com). The passwort for this demo version is "test".
+
 ## How do I use the app?
 Select a virtual hazard tour by clicking on the tour cover picture. The app detects your device automatically and adjusts the experience based on the capabilities of your device.
 
