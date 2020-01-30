@@ -1,6 +1,5 @@
 # VIRTUAL HAZARD TOURS
 # Written by Christoph Wagner-Gillen, last update: 2020-Jan
-# In case of questions, please contact wagnergillen.c@pg.com
 
 #Imports
 import os
