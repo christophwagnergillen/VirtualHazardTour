@@ -79,7 +79,7 @@ def home():
 #Login
 @app.route('/login', methods=['POST'])
 def login():
-    if request.form['password'] == 'cwg':
+    if request.form['password'] == 'test':
         user=User(1)
         login_user (user)
         session['logged_in'] = True
